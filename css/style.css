@@ -1,95 +1,303 @@
 body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
 
-  }
-
-/****************   Nav Section **********************/
 nav {
-	
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e9ecef;
 }
 
-/***********************  Footer Section   **************************/
+nav p {
+  margin: 0;
+  font-weight: 500;
+  color: #212529;
+}
+
+nav a {
+  color: #495057;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #212529;
+}
+
 footer {
-	
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e9ecef;
 }
 
-/*********** Splash Page ************************/
-header {
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #495057;
+}
 
+footer a {
+  color: #495057;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #212529;
+}
+
+footer i {
+  font-size: 1.1rem;
+}
+
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  margin-bottom: 2rem;
 }
 
 header h1 {
-  
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0 0 1.5rem 0;
+  color: #212529;
+  letter-spacing: -0.02em;
 }
 
 header img {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  margin-top: 1rem;
 }
 
 .address {
- 
+  text-align: center;
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 1rem 0;
+  font-weight: 400;
 }
 
 .tagline {
-  
+  text-align: center;
+  font-size: 1.1rem;
+  color: #495057;
+  margin: 1rem 0 2rem 0;
+  font-weight: 300;
 }
 
-/************* Sections ********************/
 hr {
+  border: none;
+  height: 1px;
+  background-color: #e9ecef;
+  margin: 2rem 0;
+}
 
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 
 section h3 {
-  
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #212529;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #212529;
+  padding-bottom: 0.5rem;
 }
 
 section dl {
-  
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 2rem;
+  margin: 1rem 0;
+}
+
+section dt {
+  font-weight: 500;
+  color: #212529;
+}
+
+section dd {
+  margin: 0;
+  color: #6c757d;
+  text-align: right;
 }
 
 section ul {
+  list-style: none;
+  padding: 0;
+}
 
+section ul li {
+  padding: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+  color: #495057;
+}
+
+section ul li:before {
+  content: '•';
+  color: #212529;
+  position: absolute;
+  left: 0;
 }
 
 section a {
-
+  color: #212529;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 section a:hover {
+  color: #495057;
+  text-decoration: underline;
 }
 
-/**************   Projects   *****************/
 .three-col {
-	
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card img {
-
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid #e9ecef;
 }
 
 .card {
-  
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
 }
 
-/**************   Responsiveness   *****************/
+.card h3 {
+  color: #212529;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.card ul li {
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.5;
+}
+
 @media (max-width: 680px) {
     nav {
-      
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
     }
 
     .three-col {
-      
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    section {
+      padding: 0 1rem;
+    }
+
+    section dl {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+
+    section dd {
+      text-align: left;
+      margin-bottom: 1rem;
     }
 }
 
-/**************   Contact Page   *****************/
 .one-col {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
 
+.one-col form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.one-col label {
+  font-weight: 500;
+  color: #212529;
+  margin-bottom: 0.25rem;
 }
 
 input {
-  
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
+input:focus {
+  outline: none;
+  border-color: #212529;
+}
+
+input[type="submit"] {
+  background: #212529;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+  background: #495057;
 }
 
 textarea {
-   
+   padding: 0.75rem;
+   border: 1px solid #ced4da;
+   border-radius: 4px;
+   font-size: 1rem;
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   resize: vertical;
+   min-height: 120px;
+}
+
+textarea:focus {
+   outline: none;
+   border-color: #212529;
 }
