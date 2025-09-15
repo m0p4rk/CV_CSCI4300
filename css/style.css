@@ -17,7 +17,7 @@ nav {
 
 nav p {
   margin: 0;
-  font-weight: 500;
+  font-weight: normal;
   color: #212529;
 }
 
@@ -28,6 +28,10 @@ nav a {
 
 nav a:hover {
   color: #212529;
+}
+
+.navbar-brand {
+  font-weight: normal !important;
 }
 
 footer {
@@ -176,36 +180,105 @@ section a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
-}
-
-.card img {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  border: 1px solid #e9ecef;
 }
 
 .card {
   background: #ffffff;
   border-radius: 8px;
-  padding: 1.5rem;
   border: 1px solid #e9ecef;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  min-width: 280px;
+  overflow: hidden;
 }
 
-.card h3 {
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card .card-title {
   color: #212529;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 2px solid #e9ecef;
   padding-bottom: 0.5rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  hyphens: auto;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.card ul {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .card ul li {
   font-size: 0.9rem;
   color: #495057;
   line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  min-width: 0;
+  width: 100%;
+}
+
+.card ul li i {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: #007bff;
+  width: 12px;
+}
+
+.card ul li span {
+  flex: 1;
+  min-width: 0;
+  width: calc(100% - 20px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 @media (max-width: 680px) {
@@ -218,6 +291,40 @@ section a:hover {
     .three-col {
       grid-template-columns: 1fr;
       gap: 1.5rem;
+      max-width: none;
+      margin: 1rem auto;
+    }
+
+    .card {
+      height: auto;
+      min-height: 320px;
+    }
+
+    .card .card-body {
+      padding: 1.25rem;
+    }
+
+    .card .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card img {
+      height: 160px;
+      margin-bottom: 0.8rem;
+    }
+
+    .card ul {
+      gap: 0.5rem;
+    }
+
+    .card ul li {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .card ul li i {
+      font-size: 0.8rem;
     }
 
     header h1 {

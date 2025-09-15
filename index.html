@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mose Park</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +12,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-        <nav>
-        <p>Mose Park</p>
-        <p><a href="contact.html">Contact Mose Park</a></p>
+        <nav class="navbar navbar-expand-lg bg-light border-bottom">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Mose Park</span>
+            <a class="nav-link" href="contact.html">Contact Mose Park</a>
+        </div>
     </nav>
 
-    <header>
-        <h1>Mose Park</h1>
-        <img src="images/ds_headshot.jpg" alt="Mose Park headshot" width="200" height="250">
+    <header class="text-center py-5 bg-white">
+        <div class="container">
+            <h1 class="display-4 fw-light mb-4">Mose Park</h1>
+            <img src="images/ds_headshot.jpg" alt="Mose Park headshot" class="rounded img-fluid mb-3" width="200" height="250">
+        </div>
     </header>
-    <p class="address">Athens, GA &bull; 706-540-7220 &bull; mp58721@uga.edu</p>
-    <p class="tagline">Full Stack Engineer passionate about scalable web applications and system architecture.</p>
+    <div class="container">
+        <p class="address text-center text-muted mb-2">Athens, GA &bull; 706-540-7220 &bull; mp58721@uga.edu</p>
+        <p class="tagline text-center lead mb-4">Full Stack Engineer passionate about scalable web applications and system architecture.</p>
+    </div>
 
-    <hr>
+    <hr class="my-4">
 
-    <section>
-        <h3>Education</h3>
+    <div class="container">
+    <section class="mb-5">
+        <h3 class="h4 mb-3 pb-2 border-bottom">Education</h3>
         <dl>
             <dt>University of Georgia</dt>
             <dd>N/A</dd>
@@ -35,8 +43,8 @@
         </dl>
     </section>
 
-    <section>
-        <h3>Honors and Awards</h3>
+    <section class="mb-5">
+        <h3 class="h4 mb-3 pb-2 border-bottom">Honors and Awards</h3>
         <dl>
             <dt>Full Stack Development Certification</dt>
             <dd>2024</dd>
@@ -47,23 +55,27 @@
         </dl>
     </section>
 
-    <section>
-        <h3>Skills</h3>
-        <ul>
-            <li>Java (Spring Boot)</li>
-            <li>React.js</li>
-            <li>SQL & JPA</li>
-            <li>Docker</li>
-            <li>Git</li>
-            <li>AWS (EC2, S3, RDS)</li>
-            <li>GCP (Compute Engine, Cloud Storage)</li>
-            <li>RESTful APIs</li>
-            <li>JWT Authentication</li>
-        </ul>
+    <section class="mb-5">
+        <h3 class="h4 mb-3 pb-2 border-bottom">Skills</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i>Java (Spring Boot)</li>
+                    <li><i class="fas fa-check text-success me-2"></i>React.js</li>
+                    <li><i class="fas fa-check text-success me-2"></i>SQL & JPA</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Docker</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Git</li>
+                    <li><i class="fas fa-check text-success me-2"></i>AWS (EC2, S3, RDS)</li>
+                    <li><i class="fas fa-check text-success me-2"></i>GCP (Compute Engine, Cloud Storage)</li>
+                    <li><i class="fas fa-check text-success me-2"></i>RESTful APIs</li>
+                    <li><i class="fas fa-check text-success me-2"></i>JWT Authentication</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h3>Leadership and Experience</h3>
+    <section class="mb-5">
+        <h3 class="h4 mb-3 pb-2 border-bottom">Leadership and Experience</h3>
         <dl>
             <dt><a href="http://www.daesin.or.kr/default/main/main.php" target="_blank">Full Stack Engineer at Daeshin Technology Development</a></dt>
             <dd>May 2024 – Aug 2024</dd>
@@ -76,41 +88,125 @@
         </dl>
     </section>
 
-    <section>
-        <h3>Projects</h3>
-        <div class="three-col">
-        <div class="card">
-            <h3>Event Scheduling System</h3>
-            <img src="images/img_avatar.png" alt="Event Scheduling System project" width="150" height="150">
-            <ul>
-                <li>Led 6-person team to design scalable MySQL database for dynamic event planning</li>
-                <li>Developed responsive interfaces using Spring Boot and JSP</li>
-                <li>Delivered robust scheduling system enhancing operational efficiency</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Product Management System</h3>
-            <img src="images/img_avatar.png" alt="Product Management System project" width="150" height="150">
-            <ul>
-                <li>Developed integrated system using Spring Boot and React</li>
-                <li>Implemented secure JWT-based authentication and category management</li>
-                <li>Designed user-friendly UI with drag-and-drop image management</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Enterprise Authentication System</h3>
-            <img src="images/img_avatar.png" alt="Enterprise Authentication System project" width="150" height="150">
-            <ul>
-                <li>Built scalable authentication/authorization system using Spring Security</li>
-                <li>Implemented JWT token-based security architecture</li>
-                <li>Optimized data access layer with JPA/Hibernate reducing query time</li>
-            </ul>
-        </div>
+    <section class="mb-5">
+        <h3 class="h4 mb-3 pb-2 border-bottom">Projects</h3>
+        <div class="row three-col">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Event Scheduling System</h5>
+                        <img src="images/img_avatar.png" alt="Event Scheduling System project" class="img-fluid rounded mb-3">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-chevron-right"></i><span>Led 6-person team to design scalable MySQL database for dynamic event planning</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span>Developed responsive interfaces using Spring Boot and JSP</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span>Delivered robust scheduling system enhancing operational efficiency</span></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Management System</h5>
+                        <img src="images/img_avatar.png" alt="Product Management System project" class="img-fluid rounded mb-3">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-chevron-right"></i><span>Developed integrated system using Spring Boot and React</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span>Implemented secure JWT-based authentication and category management</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span>Designed user-friendly UI with drag-and-drop image management</span></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Enterprise Authentication System</h5>
+                        <img src="images/img_avatar.png" alt="Enterprise Authentication System project" class="img-fluid rounded mb-3">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-chevron-right"></i><span>Built scalable authentication/authorization system using Spring Security</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span>Implemented JWT token-based security architecture</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span>Optimized data access layer with JPA/Hibernate reducing query time</span></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    </div>
 
-    <footer>
-        <p>&copy; <a href="contact.html">Mose Park</a> <a href="https://linkedin.com/in/mosepark/" target="_blank"><i class="fab fa-linkedin"></i></a></p>
+    <footer class="bg-light py-4 mt-5 border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; <a href="contact.html" class="text-decoration-none">Mose Park</a> 
+            <a href="https://linkedin.com/in/mosepark/" target="_blank" class="text-decoration-none ms-3">
+                <i class="fab fa-linkedin fs-5"></i>
+            </a></p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                    this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+                });
+            });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    this.style.color = '#6c757d';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 200);
+                });
+            });
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+            
+            const skillItems = document.querySelectorAll('section ul li');
+            skillItems.forEach((item, index) => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.paddingLeft = '1.5rem';
+                    this.style.color = '#212529';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.paddingLeft = '1rem';
+                    this.style.color = '#495057';
+                });
+            });
+            
+            document.querySelector('header img').addEventListener('click', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                }, 300);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

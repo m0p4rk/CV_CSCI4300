@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mose Park</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,33 +12,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <p>Mose Park</p>
-        <p><a href="index.html">About Mose Park</a></p>
+    <nav class="navbar navbar-expand-lg bg-light border-bottom">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Mose Park</span>
+            <a class="nav-link" href="index.html">About Mose Park</a>
+        </div>
     </nav>
 
-    <h1>Mose Park</h1>
-    <p>Athens, GA &bull; 706-540-7220 &bull; mp58721@uga.edu</p>
+    <div class="container my-5">
+        <div class="text-center mb-4">
+            <h1 class="display-5 fw-light">Contact Mose Park</h1>
+            <p class="lead text-muted">Athens, GA &bull; 706-540-7220 &bull; mp58721@uga.edu</p>
+        </div>
 
-    <hr>
+        <hr class="my-4">
 
-    <section class="one-col">
-        <form method="POST" action="https://formsubmit.co/your_unique_form_id">
-            <label for="name">Name (required):</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            
-            <label for="email">Email (required):</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
-            
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm one-col">
+                    <div class="card-body p-4">
+                        <form method="POST" action="https://formsubmit.co/your_unique_form_id">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-semibold">Name (required)</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email (required)</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-semibold">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-dark btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; <a href="index.html">Mose Park</a> <a href="https://linkedin.com/in/mosepark/" target="_blank"><i class="fab fa-linkedin"></i></a></p>
+    <footer class="bg-light py-4 mt-5 border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; <a href="index.html" class="text-decoration-none">Mose Park</a> 
+            <a href="https://linkedin.com/in/mosepark/" target="_blank" class="text-decoration-none ms-3">
+                <i class="fab fa-linkedin fs-5"></i>
+            </a></p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const inputs = document.querySelectorAll('input, textarea');
+            const submitBtn = document.querySelector('input[type="submit"]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#495057';
+                    this.style.transform = 'scale(1.02)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.borderColor = '#ced4da';
+                    this.style.transform = 'scale(1)';
+                    
+                    if (this.type === 'email' && this.value) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(this.value)) {
+                            this.style.borderColor = '#dc3545';
+                        } else {
+                            this.style.borderColor = '#28a745';
+                        }
+                    }
+                    
+                    if (this.required && !this.value) {
+                        this.style.borderColor = '#dc3545';
+                    } else if (this.value && this.type !== 'email') {
+                        this.style.borderColor = '#28a745';
+                    }
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.type === 'text' || this.tagName === 'TEXTAREA') {
+                        const charCount = this.value.length;
+                        if (charCount > 0) {
+                            this.style.borderColor = '#28a745';
+                        }
+                    }
+                });
+            });
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                submitBtn.style.background = '#28a745';
+                submitBtn.value = 'Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.style.background = '#17a2b8';
+                    submitBtn.value = 'Message Sent!';
+                    
+                    setTimeout(() => {
+                        submitBtn.style.background = '#212529';
+                        submitBtn.value = 'Submit';
+                        submitBtn.disabled = false;
+                        form.reset();
+                        
+                        inputs.forEach(input => {
+                            input.style.borderColor = '#ced4da';
+                        });
+                    }, 2000);
+                }, 1500);
+            });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    this.style.color = '#6c757d';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 200);
+                });
+            });
+            
+            const section = document.querySelector('.one-col');
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            }, 100);
+            
+            document.querySelector('h1').addEventListener('click', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.color = '#495057';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                    this.style.color = '';
+                }, 200);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
