@@ -90,46 +90,34 @@
 
     <section class="mb-5">
         <h3 class="h4 mb-3 pb-2 border-bottom">Projects</h3>
-        <div class="row three-col">
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Event Scheduling System</h5>
-                        <img src="images/img_avatar.png" alt="Event Scheduling System project" class="img-fluid rounded mb-3">
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-chevron-right"></i><span>Led 6-person team to design scalable MySQL database for dynamic event planning</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span>Developed responsive interfaces using Spring Boot and JSP</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span>Delivered robust scheduling system enhancing operational efficiency</span></li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Product Management System</h5>
-                        <img src="images/img_avatar.png" alt="Product Management System project" class="img-fluid rounded mb-3">
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-chevron-right"></i><span>Developed integrated system using Spring Boot and React</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span>Implemented secure JWT-based authentication and category management</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span>Designed user-friendly UI with drag-and-drop image management</span></li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">Enterprise Authentication System</h5>
-                        <img src="images/img_avatar.png" alt="Enterprise Authentication System project" class="img-fluid rounded mb-3">
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-chevron-right"></i><span>Built scalable authentication/authorization system using Spring Security</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span>Implemented JWT token-based security architecture</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span>Optimized data access layer with JPA/Hibernate reducing query time</span></li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="three-col">
+        <div class="card">
+            <h3>Event Scheduling System</h3>
+            <img src="images/img_avatar.png" alt="Event Scheduling System project" width="150" height="150">
+            <ul>
+                <li>Led 6-person team to design scalable MySQL database for dynamic event planning</li>
+                <li>Developed responsive interfaces using Spring Boot and JSP</li>
+                <li>Delivered robust scheduling system enhancing operational efficiency</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Product Management System</h3>
+            <img src="images/img_avatar.png" alt="Product Management System project" width="150" height="150">
+            <ul>
+                <li>Developed integrated system using Spring Boot and React</li>
+                <li>Implemented secure JWT-based authentication and category management</li>
+                <li>Designed user-friendly UI with drag-and-drop image management</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Enterprise Authentication System</h3>
+            <img src="images/img_avatar.png" alt="Enterprise Authentication System project" width="150" height="150">
+            <ul>
+                <li>Built scalable authentication/authorization system using Spring Security</li>
+                <li>Implemented JWT token-based security architecture</li>
+                <li>Optimized data access layer with JPA/Hibernate reducing query time</li>
+            </ul>
+        </div>
         </div>
     </section>
     </div>
@@ -145,21 +133,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
             const navLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('section');
-            
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px)';
-                    this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-                });
-            });
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
